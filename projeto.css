@@ -1,0 +1,190 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;    
+}
+
+/*estilizando o container principal definindo o tamanho */
+.container{
+
+    height: 100vh;
+    width: 100vw;
+}
+
+.container-left{
+    
+    display: inline-block; /*um ao lado do outro */
+    width: 60%; /*Toma 60% da pagina */
+    margin-top: 20%;
+    padding-left: 140px;
+    
+}
+ 
+
+/*a cor estava em hexadecimal, para mudar o fundo e ficar claro, tivemos que converter para RGB e colocar um opacity de 0.16 para
+não ficar sobre a imagem */
+.container-right{
+
+    display: inline-block; /*um ao lado do outro */
+   /*background-color: #5D5D7D;*/
+    background-color: rgb(93,93,125, 0.16);
+    height: 120%;
+    width: 40%;/*toma 40% da página */
+    position: absolute; /*ele define a posição do container ao lado direito como absoluto, no canto dele sem alterações. */
+    
+}
+
+img{
+
+    position: relative; /*posição relativa ao container-rigth */
+    top:25%;/* distancia do topo, acima.  */
+    right: 115px; /*posição da imagem em relação a margem direita */
+}
+
+
+
+h1{
+
+    color:#5D5D7D;
+    font-weight: 400;
+    font-size: 70px;
+    line-height: 80px;
+    width: 368px;    
+
+}
+
+p{
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 48px;    
+    color:#5D5D7D;
+    opacity: 0.6;
+    margin: 15px 0; /* 15px pra cima pra baixo, 0 para os lados */
+    width: 540px;
+}
+ 
+button{
+    
+    color: aliceblue;
+    background-color: #9499EA;
+    width: 268px;
+    height: 62px;
+    box-shadow: 0px 10px 24px rgba(148,.153,.234,.0.0979959);
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 100%;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    
+}
+
+button:hover{
+    opacity: 0.8;
+}
+
+button:active{
+
+    opacity: 0.5;
+}
+
+a{
+    font-size: 28px;
+    line-height: 41px;
+    color:#5D5D7D;
+    margin-right: 41px;
+    cursor: pointer;
+    
+}
+
+/*vai pegar o segundo elemento do link no caso o Work e mudar a opacidade. 
+Poderia também ter criado uma classe só pra ele e altera-lo */
+a:nth-child(2){
+
+    opacity: 0.6;
+}
+
+/*mudando a opacidade ao passar o mouse */
+a:hover{
+    opacity: 0.4;
+
+}
+
+/*mudando a opacidade ao clicar nos links */
+a:active{
+
+    opacity: 0.8;
+}
+
+header{
+
+    margin: 24px 0 0 57px; /*modo relógio: encima, lado direito, embaixo, lado esquerdo */
+}
+
+/*responsividade, quando a tela diminuir a partir de 900px ele altera os elementos abaixo */
+@media screen and (max-width:900px) {
+
+    .container-left{
+
+        width: 100%;
+        height: 50%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .container-right{
+
+        display: block;
+        height: auto; /*vai ficar de acordo com tamnanho disponível, ou 50%  mas se usar os 50% em vez do auto,
+         o fundo vai ficar faltando no final da imagem*/
+        width: 100%;
+        position: static;
+        padding: 40px;
+    }
+
+    img{
+
+        position: static;
+        max-width: 90%;     
+        
+    }
+    
+    header{
+
+        display: none;
+    }
+
+    h1{
+        font-size: 36px;
+        line-height:52px;
+        width: auto;
+        margin-top: 58px;
+        margin-left: 50px;
+        margin-right: 50px;
+        text-align: center;
+    }
+
+    p{
+        margin: 15px 40px;
+        width: auto;
+        text-align: center;
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    button{
+        
+        margin:0 auto;
+        display: block;
+    }
+
+    @media screen and (max-width: 330px){
+
+        .container-left{
+
+            height: 70%;
+        }
+
+    }
+}
